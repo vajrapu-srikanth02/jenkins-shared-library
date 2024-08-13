@@ -74,6 +74,15 @@ def call(Map configMap){
                     """
                 }
             }
+
+            stage('snyk test') {
+                steps{
+                    snykSecurity(
+                        snykInstallation: 'mysnyk',
+                        snykTokenId: '4290f677-9a6b-4e6c-b0fc-f551763382f0',
+                }
+
+            }
             stage('Build') {
                 steps {
                     sh """
